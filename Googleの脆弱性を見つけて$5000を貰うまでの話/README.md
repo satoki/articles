@@ -1,5 +1,7 @@
-# はじめに
-Googleには未発見の脆弱性を報告すると、種類に応じて報奨金が貰える制度「Google Vulnerability Reward Program (VRP)」がある。世のBug bounty hunterたちは、英語を始め様々な"言語"を駆使しているため問題なく報告できるが、偶然にも脆弱性を発見してしまった三流エンジニアは日本語記事が少なく苦労する。そんな人のためと少しの自慢を混ぜてここに記録を置いておく。  
+# Googleの脆弱性を見つけて$5000を貰うまでの話
+
+## はじめに
+Googleには未発見の脆弱性を報告すると、種類に応じて報奨金が貰える制度「Google Vulnerability Reward Program (VRP)」がある。世のBug bounty hunterたちは、英語を始め様々な"言語"を駆使しているため問題なく報告できるが、偶然にも脆弱性を発見してしまった三流エンジニアは日本語記事が少なく苦労する。そんな人のためと少しの自慢を混ぜた記録を置いておく。  
 [Google Vulnerability Reward Program (VRP) Rules](https://www.google.com/about/appsecurity/reward-program/)  
 
 ## 脆弱性を見つける
@@ -22,12 +24,12 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 ## 脆弱性は無い by Google
 報告後数分で自動返信メールが到着し、その後数件「** NOTE: This e-mail has been generated automatically. **」で始まる自動送信メールが続いた。これらのメールでは、Triageやstatus、priority、severityの変更が行われていた。一週間後、自動ではないメールを受信し、そこには以下のように書かれていた。  
 
->Changed
->status:  Assigned  →  Not Reproducible
+>Changed  
+>status:  Assigned  →  Not Reproducible  
 >
->Hey,
->Thanks for the report. We cannot reproduce the issue you're reporting.
->Can you send us screenshot and specify in which browser it works for you?
+>Hey,  
+>Thanks for the report. We cannot reproduce the issue you're reporting.  
+>Can you send us screenshot and specify in which browser it works for you?  
 
 **再現性がない ;(**  
 受け取るレポートのPoCを全て解析するのは時間的にも難しい。先のレポートが不出来だったことに薄々感づいていたため、再度詳細を報告することにした。  
@@ -38,44 +40,44 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 ![screenshot](screenshot.png)  
 すると翌日以下のようなメールを受信した。  
 
->Changed
->status:  Not Reproducible  →  Accepted
+>Changed  
+>status:  Not Reproducible  →  Accepted  
 
 翌日にstatusはAssignedとなり、数回PoCの解説を行った。  
 
 ## 脆弱性は無いことも無い by Google
 ついに以下のような記念すべき返信が届いた。  
 
->Changed
->type:  Customer Issue  →  Bug
->status:  Assigned  →  Accepted
+>Changed  
+>type:  Customer Issue  →  Bug  
+>status:  Assigned  →  Accepted  
 >
->Hi,
->Nice catch! I've filed a bug based on your report.
->The panel will evaluate it at the next VRP panel meeting and we'll update you once we've got more information.
->All you need to do now is wait. If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!
+>Hi,  
+>Nice catch! I've filed a bug based on your report.  
+>The panel will evaluate it at the next VRP panel meeting and we'll update you once we've got more information.  
+>All you need to do now is wait. If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!  
 
 typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。  
-VRP panel meetingのスケジュールは  
-https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting  
+VRP panel meetingのスケジュールは
+https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting
 で確認できる。  
 
 ## $5000.00あげちゃう by Google
 VRP panel meetingの翌日、さらに嬉しいメールが届いた。  
 
->** NOTE: This is an automatically generated email **
+>** NOTE: This is an automatically generated email **  
 >
->Hello,
->Thank you for reporting this bug.
->As part of Google's Vulnerability Reward Program, the panel has decided to issue a reward of $5000.00.
+>Hello,  
+>Thank you for reporting this bug.  
+>As part of Google's Vulnerability Reward Program, the panel has decided to issue a reward of $5000.00.  
 >
->Important: if you aren't registered with Google as a supplier, p2p-vrp@google.com will reach out to you.
->If you have registered in the past, no need to do it again - sit back and relax, and we will process the payment soon.
+>Important: if you aren't registered with Google as a supplier, p2p-vrp@google.com will reach out to you.  
+>If you have registered in the past, no need to do it again - sit back and relax, and we will process the payment soon.  
 >
->If you have any payment related requests, please direct them to p2p-vrp@google.com.
->Please remember to include the subject of this email and the email address that the report was sent from.
+>If you have any payment related requests, please direct them to p2p-vrp@google.com.  
+>Please remember to include the subject of this email and the email address that the report was sent from.  
 
-なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](#はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、Hall of Fameへプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
+なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](##はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、Hall of Fameへプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
 [Bughunter Hall of Fame](https://bughunter.withgoogle.com/rank/hof)  
 
 ## 支払い情報を登録する
