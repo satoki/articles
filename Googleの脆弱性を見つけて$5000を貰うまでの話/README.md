@@ -37,7 +37,7 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 ## Googleに詳細を追加報告する
 返信を受けて、発見したXSSの仕組み、スクリーンショット、検証に使用したブラウザバージョンなど詳細を再度報告した。  
 送信したスクリーンショット(play.google.com)  
-![screenshot](screenshot.png)  
+<img src="screenshot.png" alt="screenshot" width="500">  
 すると翌日以下のようなメールを受信した。  
 
 >Changed  
@@ -77,7 +77,7 @@ VRP panel meetingの翌日、さらに嬉しいメールが届いた。
 >If you have any payment related requests, please direct them to p2p-vrp@google.com.  
 >Please remember to include the subject of this email and the email address that the report was sent from.  
 
-なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](##はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、Hall of Fameへプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
+なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](#はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、Hall of Fameへプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
 [Bughunter Hall of Fame](https://bughunter.withgoogle.com/rank/hof)  
 
 ## 支払い情報を登録する
