@@ -1,7 +1,7 @@
 # Googleの脆弱性を見つけて$5000を貰うまでの話
 
 ## はじめに
-Googleには未発見の脆弱性を報告すると、種類に応じて報奨金が貰える制度「Google Vulnerability Reward Program (VRP)」がある。世のBug bounty hunterたちは、英語を始め様々な"言語"を駆使しているため問題なく報告できるが、偶然にも脆弱性を発見してしまった三流エンジニアは日本語記事が少なく苦労する。そんな人のためと少しの自慢を混ぜた記録を置いておく。  
+Googleには未発見の脆弱性を報告すると、種類に応じて報奨金が貰える制度「Google Vulnerability Reward Program (VRP)」がある。世のBug bounty hunterたちは、英語を始め様々な"言語"を駆使しているため問題なく報告できるが、偶然にも脆弱性を発見してしまった三流エンジニアは日本語記事が少なく苦労する。そんな人のため、少しの自慢を混ぜた記録を置いておく。  
 [Google Vulnerability Reward Program (VRP) Rules](https://www.google.com/about/appsecurity/reward-program/)  
 
 ## 脆弱性を見つける
@@ -14,7 +14,7 @@ XSS自体、よく知っている脆弱性だったため、自分でも何か�
 `play.google.com`  
 `contacts.google.com`  
 `assistant.google.com`  
-詳細についてここでは明かさない(記事を書いている現在、修正されていないため)。  
+詳細についてここでは明かさない。  
 
 ## Googleに報告する
 Googleに報告するにあたり、XSSの可能性だけでは心もとないためPoC(概念実証)を作成した。無事alertを実行可能な一行のコードが完成したので以下よりGoogleに報告した。受け取るレポートの90%以上が脆弱性では無いらしいので、報告する場合はしっかりとルールを確認した方が良いと思われる。  
@@ -28,7 +28,8 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 >status:  Assigned  →  Not Reproducible  
 >
 >Hey,  
->Thanks for the report. We cannot reproduce the issue you're reporting.  
+>Thanks for the report.  
+>We cannot reproduce the issue you're reporting.  
 >Can you send us screenshot and specify in which browser it works for you?  
 
 **再現性がない ;(**  
@@ -43,7 +44,7 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 >Changed  
 >status:  Not Reproducible  →  Accepted  
 
-翌日にstatusはAssignedとなり、数回PoCの解説を行った。  
+さらに翌日にstatusはAssignedとなり、数回PoCの解説を行った。  
 
 ## 脆弱性は無いことも無い by Google
 ついに以下のような記念すべき返信が届いた。  
@@ -53,13 +54,14 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 >status:  Assigned  →  Accepted  
 >
 >Hi,  
->Nice catch! I've filed a bug based on your report.  
+>Nice catch!  
+>I've filed a bug based on your report.  
 >The panel will evaluate it at the next VRP panel meeting and we'll update you once we've got more information.  
->All you need to do now is wait. If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!  
+>All you need to do now is wait.  
+>If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!  
 
-typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。  
-VRP panel meetingのスケジュールは
-https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting
+typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。
+VRP panel meetingのスケジュールは[Weekly Panel Meeting](https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting)
 で確認できる。  
 
 ## $5000.00あげちゃう by Google
