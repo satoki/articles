@@ -58,8 +58,7 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 >All you need to do now is wait.  
 >If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!  
 
-typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。
-VRP panel meetingのスケジュールは[Weekly Panel Meeting](https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting)で確認できる。  
+typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。VRP panel meetingのスケジュールは[Weekly Panel Meeting](https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting)で確認できる。  
 
 ## $5000.00あげちゃう by Google
 VRP panel meetingの翌日、さらに嬉しいメールが届いた。  
