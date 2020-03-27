@@ -17,9 +17,7 @@ XSS自体、よく知っている脆弱性だったため、自分でも何か�
 詳細についてここでは明かさない。  
 
 ## Googleに報告する
-Googleに報告するにあたり、XSSの可能性だけでは心もとないためPoC(概念実証)を作成した。無事alertを実行可能な一行のコードが完成したので以下よりGoogleに報告した。受け取るレポートの90%以上が脆弱性では無いらしいので、報告する場合はしっかりとルールを確認した方が良いと思われる。  
-[Report a security vulnerability](https://goo.gl/vulnz)  
-レポートにはPoC、被害予想、対象、名前のみを記載した。  
+Googleに報告するにあたり、XSSの可能性だけでは心もとないためPoC(概念実証)を作成した。無事alertを実行可能な一行のコードが完成したので[Report a security vulnerability](https://goo.gl/vulnz)よりGoogleに報告した。受け取るレポートの90%以上が脆弱性では無いらしいので、報告する場合はしっかりとルールを確認した方が良いと思われる。レポートにはPoC、被害予想、対象、名前のみを記載した。  
 
 ## 脆弱性は無い by Google
 報告後数分で自動返信メールが到着し、その後数件「** NOTE: This e-mail has been generated automatically. **」で始まる自動送信メールが続いた。これらのメールでは、Triageやstatus、priority、severityの変更が行われていた。一週間後、自動ではないメールを受信し、そこには以下のように書かれていた。  
@@ -61,8 +59,7 @@ Googleに報告するにあたり、XSSの可能性だけでは心もとない�
 >If you don't hear back from us in 2-3 weeks or have additional information about the vulnerability, let us know!  
 
 typeがBugになっているではないか。VRP panel meetingが終了するまで、行えることはないようだ。この頃からメールの受信が楽しみになってきていた。
-VRP panel meetingのスケジュールは[Weekly Panel Meeting](https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting)
-で確認できる。  
+VRP panel meetingのスケジュールは[Weekly Panel Meeting](https://sites.google.com/site/bughunteruniversity/behind-the-scenes/rewards-philosophy/weekly-panel-meeting)で確認できる。  
 
 ## $5000.00あげちゃう by Google
 VRP panel meetingの翌日、さらに嬉しいメールが届いた。  
@@ -79,11 +76,10 @@ VRP panel meetingの翌日、さらに嬉しいメールが届いた。
 >If you have any payment related requests, please direct them to p2p-vrp@google.com.  
 >Please remember to include the subject of this email and the email address that the report was sent from.  
 
-なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](#はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、Hall of Fameへプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
-[Bughunter Hall of Fame](https://bughunter.withgoogle.com/rank/hof)  
+なんと$5000.00も貰えるらしい(5倍にして)。これは[はじめに](#はじめに)に記載したルールに記述してあり、「Other highly sensitive applications」の「Execute code on the client」であるらしい。もちろんサプライヤーとして登録した覚えなど無いので、待機するのみである。その間に、[Bughunter Hall of Fame](https://bughunter.withgoogle.com/rank/hof)へプロフィールを作成した。驚くべき事にランキングが165/750ほどであった。  
 
 ## 支払い情報を登録する
-一週間後、`p2p-vrp@google.com`から支払い情報の登録を促すメールを受信した。手順通り支払い情報を登録すれば良いので、何も問題は起こらない。登録後に送信されてくるメールを転送する必要があることと、「Certification of no US activities」の提出が必要であることに注意したい。  
+一週間後、`p2p-vrp@google.com`から支払い情報の登録を促すメールを受信した。手順通り支払い情報を登録すれば良いので、何も問題は起こらない。登録後に送信されてくるメールを転送する必要があることと、「Certification of no US activities」の提出が必要であることに注意したい。TitleにはPresidentと記入した。  
 
 ## 報奨金を獲得する
 支払い情報を登録してから約一ヶ月後、報奨金が入金されたことを確認した。年末年始を挟んだためか支払いに時間がかかったようだ。明細に「ＧＯＯＧＬＥ」と表示されているのは少し嬉しい。  
