@@ -31,7 +31,6 @@ Administrator,Administrator,Administrator,password,,,,,,en,,1,,Asia/Tokyo,,,,,,,
 
 CSVファイルの読み込み画面は以下のようになっている。  
 ![csv1.png](csv1.png)  
-
 先頭5行のみしか閲覧できないため、Administratorの表示が無い事が分かる。現段階では6行目に存在するためCSVファイルを開くことで確認できるが、これが数百、数千行となると確認は不可能である。Administratorでのログイン中にも、本脆弱性は機能する。さらに恐ろしいことに、デフォルトで無効化されているAdministratorが有効化されている。  
 
 ### 攻撃シナリオ(CSVファイルの受け渡し、CSVファイルの改竄)
