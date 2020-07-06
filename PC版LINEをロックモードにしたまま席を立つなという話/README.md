@@ -42,7 +42,7 @@ $ strings LINE.DMP | grep -o "\"text\":\"Test-.*\",\"location\":"
 "text":"Test-3:Secret Message","location":
 "text":"Test-3:Secret Message","location":
 ```
-Test-2は日本語の関係でgrepできていないが、Test-1やTest-3が取得できている。`grep -o "\"text\":\".*\",\"location\":"`とすると他の(Testメッセージでない)メッセージも取得できる。  
+Test-2は日本語の関係でstringsできていないが、Test-1やTest-3が取得できている。`grep -o "\"text\":\".*\",\"location\":"`とすると他の(Testメッセージでない)メッセージも取得できる。  
 
 ## 結果
 ロックモードでは以下のメッセージが読み取れた。  
