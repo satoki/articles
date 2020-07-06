@@ -13,7 +13,7 @@ Windows版LINE(ver 6.1.0.2262)で検証を行うことにする(Mac版は不明)
   
 メッセージ受信側(Windows)  
 LINEのメモリを表示してみる。  
-<img src="mem.png" alt="mem" width="600">  
+<img src="mem.png" alt="mem" width="700">  
 Test4は絵文字なので表示できていないが、すべてのメッセージが読み取れる。また、ダンプファイルから読み取ることもできる。タスクマネージャー -> プロセス -> LINEを右クリック -> ダンプファイルの作成(C) でダンプファイル(LINE.DMP)が得られる。これをwslでstrings(Testメッセージのみ)してみる。  
 ```bash
 $ strings LINE.DMP | grep -o "\"text\":\"Test.*\",\"location\":"
