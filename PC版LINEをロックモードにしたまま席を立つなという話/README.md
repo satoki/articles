@@ -52,7 +52,7 @@ Test-2は日本語の関係でgrepできていないが、Test-1やTest-3が取�
 - ロック前に開いたことのあるトークのメッセージ  
 - ロック中に他端末で送信したメッセージ  
 
-これらのメッセージはログアウト後にもメモリ上に残っている。ログアウト後のダンプファイルをwslでstringsしてみる。  
+これらのメッセージはLINEのログアウト後にもメモリ上に残っている。ログアウト後のダンプファイルをwslでstringsしてみる。  
 ```bash
 $ strings LINE.DMP | grep -o "\"text\":\"Test-.*\",\"location\":"
 "text":"Test-1:Hello","location":
