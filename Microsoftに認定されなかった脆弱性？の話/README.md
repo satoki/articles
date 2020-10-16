@@ -11,37 +11,39 @@ Microsoftには製品やサービスの脆弱性を発見すると、報奨金�
 ### 設定情報
 Microsoft Formsで次のようなフォームを作成する。  
 ![forms.png](forms.png)  
-Microsoft Power Automateの通知テンプレートを次のように設定する。文字"Forms"のリンク先にはhttps://forms.office.com/を指定した。  
+Microsoft Power Automateの通知テンプレートを次のように設定する。文字"Forms"のリンク先にはhttps://forms.office.com/ を指定した。  
 ![powerautomate.png](powerautomate.png)  
 ### 正しい振る舞い
-正しい振る舞いを確認するため、Formsのtextに文字を入れて送信を行う。  
+正しい振る舞いを確認するため、FormsのTextに文字を入れて送信を行う。  
 ![teams01.png](teams01.png)  
+リンクもしっかり機能しているようだ。  
 ### 投稿内容の改ざん
 次に、以下をFormsから送信することでテンプレートの内容を改ざんする。具体的にはリンク部分を消し去り、任意の文字を挿入できる。  
 ```html
 ある日の事でございます。 Teams<iframe
 ```
-リンク部分のFormsの文字が消え、Teamsの文字に置き換わっている。  
+リンク部分の"Forms"の文字が消え、"Teams"の文字に置き換わっている。  
 ![teams02.png](teams02.png)  
 ### 不正なリンクの埋め込み
-さらにリンク部分のFormsの文字に、不正なリンクを挿入する。以下をFormsから送信する。  
+さらにリンク部分の"Forms"の文字に、不正なリンクを挿入する。以下をFormsから送信する。  
 ```html
 ある日の事でございます。 <a href=http://example.com
 ```
-https://forms.office.com/だったはずのリンクが、http://example.comに変更されていることがわかる。  
+https://forms.office.com/ だったはずのリンクが、http://example.com に変更されていることがわかる。  
 ![teams03.png](teams03.png)  
+悪意のある第三者がhttp://example.com のような優しいリンクを挿入するはずがない。  
 ### DDoSへの加担
-これによってDDoSへユーザを加担させることもできる。imgタグを以下のpythonで生成する。
+imgタグを挿入することによって、DDoSへユーザを加担させることもできる。imgタグを以下のpythonで生成する。
 ```python
 for i in range(50):
     print("<img src=\"http://xxx.xxx.xxx/{:x}\">".format(i),end="")
 ```
-xxx.xxx.xxx.xxxには被害者のIPが入ることとなる。今回は試験的にRequestBinのhttps://enja21a308d3e.x.pipedream.netを用いた。  
+xxx.xxx.xxx.xxxには被害者のIPが入ることとなる。今回は試験的にRequestBinのhttps://enja21a308d3e.x.pipedream.net を用いた。  
 Teamsへの通知は以下となる。  
 ![teams04.png](teams04.png)  
 RequestBinには次のようなアクセスログがMicrosoftサーバより発せられていた。  
 ![requestbin.png](requestbin.png)  
-これを複数のFormsへ送信し続けることで、他者にMicrosoftサーバ経由でのDDoSを行わせることができる。Teamsはimgを蓄積するため一度に多量のアクセスが可能となる。  
+これを複数のFormsへ送信し続けることで、他者にMicrosoftサーバ経由でのDDoSを行わせることができる。Teamsはimgタグを蓄積するため一度に多量のアクセスが可能となる。  
 ### ユーザが行うべき対策
 Microsoft Power Automateより受け取ったコンテンツを信用しない。  
 
@@ -50,4 +52,5 @@ Microsoft Power Automateより受け取ったコンテンツを信用しない�
 > Thank you for your submission. We determined your finding does not meet our bar for immediate servicing.  
 > It is a Low/Moderate bug, which would require significant effort to exploit. You may disclose at this time if you wish.  
 
-リンク改竄できてるのにw
+リンク改竄できてるのにw  
+🕷  
