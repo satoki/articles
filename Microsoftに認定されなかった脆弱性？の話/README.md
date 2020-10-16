@@ -11,7 +11,7 @@ Microsoftには製品やサービスの脆弱性を発見すると、報奨金�
 ### 設定情報
 Microsoft Formsで次のようなフォームを作成する。  
 ![forms.png](forms.png)  
-Microsoft Power Automateの通知テンプレートを次のように設定する。文字"Forms"のリンク先にはhttps://forms.office.com/ を指定した。  
+Microsoft Power Automateの通知テンプレートを次のように設定する。文字"Forms"のリンク先にはhttps://forms.office.com を指定した。  
 ![powerautomate.png](powerautomate.png)  
 ### 正しい振る舞い
 正しい振る舞いを確認するため、FormsのTextに文字を入れて送信を行う。  
@@ -29,7 +29,7 @@ Microsoft Power Automateの通知テンプレートを次のように設定す�
 ```html
 ある日の事でございます。 <a href=http://example.com
 ```
-https://forms.office.com/ だったはずのリンクが、http://example.com に変更されていることがわかる。  
+https://forms.office.com だったはずのリンクが、http://example.com に変更されていることがわかる。  
 ![teams03.png](teams03.png)  
 悪意のある第三者がhttp://example.com のような優しいリンクを挿入するはずがない。  
 ### DDoSへの加担
