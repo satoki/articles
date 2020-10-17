@@ -7,7 +7,7 @@ Microsoftには製品やサービスの脆弱性を発見すると、報奨金�
 **本記事はMicrosoftより公開許可を受けています。本記事の内容を験する場合、法律により処罰される可能性があります。**  
 
 ## 脆弱性概要
-本脆弱性はMicrosoft Formsへの投稿をMicrosoft Power Automateを用いて、Microsoft Teamsへ転送(通知)する場合に発生する。被害としては通知テンプレートの改竄、不正なリンクの埋め込み、DDoS攻撃への荷担などである。  
+本脆弱性はMicrosoft Formsへの投稿をMicrosoft Power Automateを用いて、Microsoft Teamsへ通知(転送)する場合に発生する。被害としては通知テンプレートの改竄、不正なリンクの埋め込み、DDoS攻撃への荷担などである。  
 ### 設定情報
 Microsoft Formsで次のようなフォームを作成する。  
 ![forms.png](forms.png)  
@@ -16,7 +16,7 @@ Microsoft Power Automateの通知テンプレートを次のように設定す�
 ### 正しい振る舞い
 正しい振る舞いを確認するため、FormsのTextに文を入れて送信を行う。  
 ![teams01.png](teams01.png)  
-リンクもしっかり機能しているようだ。  
+リンクも正常に機能しているようだ。  
 ### 通知テンプレートの改竄
 次に、以下をFormsから送信することでテンプレートの内容を改竄する。具体的にはリンク部分を消し去り、任意の文字列を挿入できる。  
 ```html
