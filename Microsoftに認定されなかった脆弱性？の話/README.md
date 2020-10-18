@@ -33,7 +33,7 @@ https://forms.office.com だったはずのリンクが、http://example.com に
 ![teams03.png](teams03.png)  
 悪意のある第三者がhttp://example.com のような優しいリンクを挿入することはない。  
 ### DDoS攻撃への荷担
-imgタグを挿入することによって、DDoS攻撃へユーザを荷担させることもできる。imgタグを以下のpythonで生成する。
+imgタグを挿入することによって、DDoS攻撃へユーザを荷担させることもできる。imgタグを以下のpythonで生成する。  
 ```python
 for i in range(50):
     print("<img src=\"http://xxx.xxx.xxx.xxx/{:x}\">".format(i),end="")
@@ -45,7 +45,13 @@ RequestBinには次のようなアクセスログがMicrosoftサーバより発�
 ![requestbin.png](requestbin.png)  
 これを複数のFormsへ送信し続けることで、他者にMicrosoftサーバ経由でのDDoS攻撃を行わせることができる。Teamsはimgタグを蓄積するため一度に多量のアクセスが可能となる。  
 ### ユーザが行うべき対策
-Microsoft Power Automateより受け取ったコンテンツを信用しない。現状、imgタグへの対策はユーザ側では難しい。  
+Microsoft Power Automateより受け取ったコンテンツを信用しない。~~現状、imgタグへの対策はユーザ側では難しい。~~  
+  
+記事閲覧者より、replaceで複数の特殊記号を文字参照へ置換することによってユーザ側での対策が可能である旨のコメントがあり、以下で本脆弱性による攻撃の回避を確認した。
+```text
+replace(replace(replace(Text,'"','&quot;'),'<','&lt;'),'>','&gt;')
+```
+無害化するための関数が無いことからも分かる通り、本来はMicrosoft側で無害化が行われている(イベントハンドラや不正なタグの削除など)。本脆弱性はこの機能をバイパスするものであり、ユーザ側が適切な処理を行っていないことによる脆弱性とは別であると考えられる。  
 
 ## Microsoftの評価
 > Hi,  
