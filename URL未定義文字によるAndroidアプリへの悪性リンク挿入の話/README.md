@@ -55,7 +55,7 @@ Discordの場合はリンクの色が変化するため、注意深く確認す�
 
 ### Instagram
 <img src="images/Instagram.png" alt="Instagram.png" width="300">  
-<img src="images/Instagram_PC.png" alt="Instagram_PC.png" width="600">  
+<img src="images/Instagram_PC.png" alt="Instagram_PC.png" width="500">  
 
 ### LINE
 <img src="images/LINE.png" alt="LINE.png" width="300">  
@@ -63,7 +63,7 @@ Discordの場合はリンクの色が変化するため、注意深く確認す�
 
 ### Messenger
 <img src="images/Messenger.png" alt="Messenger.png" width="300">  
-<img src="images/Messenger_PC.png" alt="Messenger_PC.png" width="200">  
+<img src="images/Messenger_PC.png" alt="Messenger_PC.png" width="300">  
 
 
 
