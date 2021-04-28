@@ -47,18 +47,28 @@ https://www.google.com/search?q=satoki00%7Cevil.com?a=aaaaaaaaaaaaaaaaaaaaaaaaaa
 Discordの場合はリンクの色が変化するため、注意深く確認すればリンクが分割されていることがわかるが、後述するアプリの中にはリンクの色が変化しないものもある。
 この場合URLの分割をユーザが見分けることは難しい。
 また、ユーザが該当するURLを他の端末で過去に開いたことがある場合、そのアドレスは信用できると認識してしまう。
-ユーザから見るとPCでは正規のサイトに、Androidでは悪性サイトに飛ぶリンクとなる。
+ユーザから見るとPCなどでは正規のサイトに、Androidでは悪性サイトに飛ぶリンクとなる。
 
 ## 実際のアプリたち
-この現象についてDiscord特有の問題であるか確認したところ、以下に挙げるような
+この現象についてDiscord特有の問題であるか確認したところ、以下に挙げるようなアプリで同じものを確認できた。
+リンクの色が変化しないものもあり、さらにユーザが見分けることが難しくなっている。
 
-### Discord
-### LINE
 ### Instagram
+<img src="images/Instagram.png" alt="Instagram.png" width="300">  
+<img src="images/Instagram_PC.png" alt="Instagram_PC.png" width="800">  
+
+### LINE
+<img src="images/LINE.png" alt="LINE.png" width="300">  
+<img src="images/LINE_PC.png" alt="LINE_PC.png" width="800">  
+
+### Messenger
+<img src="images/Messenger.png" alt="Messenger.png" width="300">  
+<img src="images/Messenger_PC.png" alt="Messenger_PC.png" width="800">  
+
 
 
 ## おわりに
-
+ユーザの入力を信用し、そのまま自動リンク処理に渡すこと。
 
 
 
