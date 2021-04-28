@@ -16,7 +16,7 @@ URLに使用できる文字はRFC2396とRFC3986に定義されているらしく
 しかし、ポップアップ外では一本のリンクになっている。  
 <img src="images/Discord2.png" alt="Discord2.png" width="300">  
 念のためPCクライアントでも確認しようと開くと、以下のようであった。  
-<img src="images/Discord_PC.png" alt="Discord_PC.png" width="600">  
+<img src="images/Discord_PC.png" alt="Discord_PC.png" width="800">  
 こちらもエンコードされて一本のリンクになっている。  
 こうして同じ投稿でも場所や環境によってリンクの解釈が異なるといった不思議な挙動を引き当てた。  
 以下のようなリンクで同様の現象が再現した。  
@@ -34,17 +34,23 @@ Linkify
 Linkifyを用いることでtext中の指定した部分をリンク化することができる。  
 指定方法によってはURLすべてをリンクにすることや、パターンマッチすることもできる。  
 試しにアプリを作成してみたところ、URLすべてをリンクする設定にすると`|`で分割が発生した。  
-<img src="images/PoC.png" alt="PoC.png" width="300">  
+<img src="images/PoC1.png" alt="PoC1.png" width="300">  
 このことからもわかる通り、他のOSでは発生しない挙動だといえる。  
 
 ## 危険性
 環境によってリンクが分割されることで、意図せずフィッシングサイトなどに誘導される危険性がある。  
 以下のようにURLクエリパラメータを長くした場合、その部分をタップする確率が上がる。  
+```
+https://www.google.com/search?q=satoki00%7Cevil.com?a=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+```
+<img src="images/PoC2.png" alt="PoC2.png" width="300">  
 Discordの場合はリンクの色が変化するため、注意深く確認すればリンクが分割されていることがわかるが、後述するアプリの中にはリンクの色が変化しないものもある。  
 この場合URLの分割をユーザが見分けることは難しい。  
 また、ユーザが該当するURLを他の端末で過去に開いたことがある場合、そのアドレスは信用できると認識してしまう。  
+ユーザから見るとPCでは正規のサイトに、Androidでは悪性サイトに飛ぶリンクとなる。  
 
 ## 実際のアプリたち
+この現象についてDiscord特有の問題であるか確認したところ、以下に挙げるような
 
 ### Discord
 ### LINE
